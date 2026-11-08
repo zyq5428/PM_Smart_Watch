@@ -1,0 +1,4398 @@
+[
+  {
+    "key": "opportunity",
+    "phase": "0 前置立项",
+    "stream": "战略与立项",
+    "name": "机会点、目标客户及产品路标匹配",
+    "days": 5,
+    "deps": [],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "PDT负责人",
+    "output": "机会说明/路标关联",
+    "accept": "客户、价格带、上市窗口及机会假设可核验",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1001,
+    "wbs": "0.01.01",
+    "pred": []
+  },
+  {
+    "key": "charter",
+    "phase": "0 前置立项",
+    "stream": "战略与立项",
+    "name": "Charter 任务书与概念阶段授权",
+    "days": 2,
+    "deps": [
+      "opportunity"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "IPMT",
+    "output": "批准的Charter/概念预算",
+    "accept": "明确PDT负责人、范围、投入上限及退出条件",
+    "kind": "评审",
+    "gate": "Charter",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1002,
+    "wbs": "0.01.02",
+    "pred": [
+      1001
+    ]
+  },
+  {
+    "key": "voc",
+    "phase": "1 概念",
+    "stream": "市场与商业",
+    "name": "VOC、使用场景与痛点调研",
+    "days": 10,
+    "deps": [
+      "charter"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "PDT负责人",
+    "output": "VOC/场景清单",
+    "accept": "覆盖目标人群、佩戴场景及购买决策因素",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1003,
+    "wbs": "1.01.01",
+    "pred": [
+      1002
+    ]
+  },
+  {
+    "key": "bench",
+    "phase": "1 概念",
+    "stream": "市场与商业",
+    "name": "竞品拆解与体验/价格基准",
+    "days": 8,
+    "deps": [
+      "charter"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "PDT负责人",
+    "output": "竞品矩阵",
+    "accept": "覆盖续航、屏幕、运动健康、连接及售后差异",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1004,
+    "wbs": "1.01.02",
+    "pred": [
+      1002
+    ]
+  },
+  {
+    "key": "claim",
+    "phase": "1 概念",
+    "stream": "产品定义",
+    "name": "功能边界、健康/医疗宣称和目标市场初判",
+    "days": 5,
+    "deps": [
+      "voc"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "产品经理",
+    "output": "功能与市场适用矩阵",
+    "accept": "区分一般健康与诊疗用途，列明市场和监管路径待确认项",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1005,
+    "wbs": "1.02.01",
+    "pred": [
+      1003
+    ]
+  },
+  {
+    "key": "prd0",
+    "phase": "1 概念",
+    "stream": "产品定义",
+    "name": "产品包需求与初版 PRD",
+    "days": 8,
+    "deps": [
+      "voc",
+      "bench",
+      "claim"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "PDT负责人",
+    "output": "PRD v0/产品包需求",
+    "accept": "覆盖产品、配件、App、云、包装、服务及可测目标",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1006,
+    "wbs": "1.02.02",
+    "pred": [
+      1003,
+      1004,
+      1005
+    ]
+  },
+  {
+    "key": "id0",
+    "phase": "1 概念",
+    "stream": "工业与结构",
+    "name": "ID、人体工学与佩戴概念",
+    "days": 10,
+    "deps": [
+      "voc",
+      "bench"
+    ],
+    "scope": "BASE",
+    "owner": "ID/UX",
+    "approver": "PDT负责人",
+    "output": "ID概念/佩戴模型",
+    "accept": "尺寸、重量、表带、人群适配和充电方式有候选方案",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1007,
+    "wbs": "1.03.01",
+    "pred": [
+      1003,
+      1004
+    ]
+  },
+  {
+    "key": "platform",
+    "phase": "1 概念",
+    "stream": "系统工程",
+    "name": "SoC/OS/存储及平台复用评估",
+    "days": 8,
+    "deps": [
+      "prd0"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "平台选型建议",
+    "accept": "确认SDK授权、内存余量、维护周期及平台限制",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1008,
+    "wbs": "1.04.01",
+    "pred": [
+      1006
+    ]
+  },
+  {
+    "key": "sensor0",
+    "phase": "1 概念",
+    "stream": "运动健康",
+    "name": "PPG/IMU/温度等传感方案可行性",
+    "days": 7,
+    "deps": [
+      "prd0"
+    ],
+    "scope": "BASE",
+    "owner": "算法",
+    "approver": "PDT负责人",
+    "output": "传感器/算法可行性报告",
+    "accept": "识别肤色、运动伪影、光路、佩戴和数据依赖",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1009,
+    "wbs": "1.05.01",
+    "pred": [
+      1006
+    ]
+  },
+  {
+    "key": "rf0",
+    "phase": "1 概念",
+    "stream": "射频与天线",
+    "name": "蓝牙天线与整机堆叠可行性",
+    "days": 7,
+    "deps": [
+      "prd0",
+      "id0"
+    ],
+    "scope": "BASE",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "射频风险清单",
+    "accept": "金属表壳、人体遮挡及天线净空存在可实施方案",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1010,
+    "wbs": "1.06.01",
+    "pred": [
+      1006,
+      1007
+    ]
+  },
+  {
+    "key": "power0",
+    "phase": "1 概念",
+    "stream": "电源与电池",
+    "name": "电池容量、功耗及热预算初估",
+    "days": 7,
+    "deps": [
+      "platform",
+      "id0"
+    ],
+    "scope": "BASE",
+    "owner": "硬件",
+    "approver": "PDT负责人",
+    "output": "能量/热预算",
+    "accept": "按目标使用模型估算续航并保留设计余量",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1011,
+    "wbs": "1.07.01",
+    "pred": [
+      1008,
+      1007
+    ]
+  },
+  {
+    "key": "supply0",
+    "phase": "1 概念",
+    "stream": "采购与供应链",
+    "name": "关键料供应、交期与可替代性初评",
+    "days": 7,
+    "deps": [
+      "platform",
+      "sensor0"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "关键料风险/询价",
+    "accept": "屏幕、SoC、传感器、电池等长交期和单一来源已识别",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1012,
+    "wbs": "1.08.01",
+    "pred": [
+      1008,
+      1009
+    ]
+  },
+  {
+    "key": "biz0",
+    "phase": "1 概念",
+    "stream": "市场与商业",
+    "name": "销量、ASP、BOM及损益敏感性分析",
+    "days": 6,
+    "deps": [
+      "prd0",
+      "supply0"
+    ],
+    "scope": "BASE",
+    "owner": "财务",
+    "approver": "PDT负责人",
+    "output": "初版商业计划",
+    "accept": "收入成本、毛利、NRE、保修和敏感性假设有责任人",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1013,
+    "wbs": "1.01.03",
+    "pred": [
+      1006,
+      1012
+    ]
+  },
+  {
+    "key": "quality0",
+    "phase": "1 概念",
+    "stream": "质量与可靠性",
+    "name": "质量、可靠性及安全目标初稿",
+    "days": 5,
+    "deps": [
+      "prd0",
+      "claim"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "PDT负责人",
+    "output": "质量目标/重大风险",
+    "accept": "定义任务剖面、关键失效及试验策略待确认项",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1014,
+    "wbs": "1.09.01",
+    "pred": [
+      1006,
+      1005
+    ]
+  },
+  {
+    "key": "tr1",
+    "phase": "1 概念",
+    "stream": "技术评审",
+    "name": "TR1：需求与产品概念评审",
+    "days": 0,
+    "deps": [
+      "prd0",
+      "platform",
+      "power0",
+      "quality0"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "技术评审组",
+    "output": "TR1纪要/问题清单",
+    "accept": "需求和概念技术可行，关键风险及验证计划明确",
+    "kind": "评审",
+    "gate": "TR1",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1015,
+    "wbs": "1.10.01",
+    "pred": [
+      1006,
+      1008,
+      1011,
+      1014
+    ]
+  },
+  {
+    "key": "cdcp",
+    "phase": "1 概念",
+    "stream": "投资决策",
+    "name": "CDCP：概念投资决策",
+    "days": 0,
+    "deps": [
+      "tr1",
+      "biz0",
+      "rf0",
+      "id0"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "IPMT",
+    "output": "CDCP决议/计划阶段授权",
+    "accept": "商业机会成立，风险可承受，批准下一阶段投入",
+    "kind": "评审",
+    "gate": "CDCP",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1016,
+    "wbs": "1.11.01",
+    "pred": [
+      1015,
+      1013,
+      1010,
+      1007
+    ]
+  },
+  {
+    "key": "pdt",
+    "phase": "2 计划",
+    "stream": "项目策划",
+    "name": "PDT组建、角色授权与供应商接口",
+    "days": 3,
+    "deps": [
+      "cdcp"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "PDT/RACI/沟通机制",
+    "accept": "职能代表、决策权限及ODM/OEM边界确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1017,
+    "wbs": "2.01.01",
+    "pred": [
+      1016
+    ]
+  },
+  {
+    "key": "srs",
+    "phase": "2 计划",
+    "stream": "需求与系统",
+    "name": "PRD基线、SRS与需求分解",
+    "days": 10,
+    "deps": [
+      "cdcp"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "产品经理",
+    "output": "PRD/SRS/需求追踪矩阵",
+    "accept": "功能、性能、边界、优先级、验收方式和责任人完整",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1018,
+    "wbs": "2.02.01",
+    "pred": [
+      1016
+    ]
+  },
+  {
+    "key": "ux",
+    "phase": "2 计划",
+    "stream": "工业与结构",
+    "name": "交互架构、UI与无障碍方案",
+    "days": 15,
+    "deps": [
+      "srs"
+    ],
+    "scope": "BASE",
+    "owner": "ID/UX",
+    "approver": "PDT负责人",
+    "output": "UX规范/可交互原型",
+    "accept": "核心路径、异常提示、语言及可访问性经过评审",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1019,
+    "wbs": "2.03.01",
+    "pred": [
+      1018
+    ]
+  },
+  {
+    "key": "idfreeze",
+    "phase": "2 计划",
+    "stream": "工业与结构",
+    "name": "ID定案、CMF、表带及人体工学评审",
+    "days": 12,
+    "deps": [
+      "srs",
+      "id0"
+    ],
+    "scope": "BASE",
+    "owner": "ID/UX",
+    "approver": "PDT负责人",
+    "output": "ID/CMF基线",
+    "accept": "装配、皮肤接触、佩戴舒适与外观验收方法确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1020,
+    "wbs": "2.03.02",
+    "pred": [
+      1018,
+      1007
+    ]
+  },
+  {
+    "key": "stack",
+    "phase": "2 计划",
+    "stream": "工业与结构",
+    "name": "整机堆叠、光路与防水声学架构",
+    "days": 12,
+    "deps": [
+      "idfreeze",
+      "platform"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "堆叠/密封/声学方案",
+    "accept": "光窗、天线、麦克风、扬声器、泄压及维修路径协调",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1021,
+    "wbs": "2.03.03",
+    "pred": [
+      1020,
+      1008
+    ]
+  },
+  {
+    "key": "arch",
+    "phase": "2 计划",
+    "stream": "需求与系统",
+    "name": "系统架构、接口与软硬件版本策略",
+    "days": 12,
+    "deps": [
+      "srs",
+      "platform"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "架构/接口/版本基线",
+    "accept": "明确端、App、云、算法和硬件接口及兼容矩阵",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1022,
+    "wbs": "2.02.02",
+    "pred": [
+      1018,
+      1008
+    ]
+  },
+  {
+    "key": "gnssplan",
+    "phase": "2 计划",
+    "stream": "功能选配",
+    "name": "GNSS频段、定位场景与天线共存策划",
+    "days": 5,
+    "deps": [
+      "arch",
+      "stack"
+    ],
+    "scope": "GNSS",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "GNSS设计/验证范围",
+    "accept": "定义TTFF、轨迹、城市峡谷及运动场景目标",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1023,
+    "wbs": "2.04.01",
+    "pred": [
+      1022,
+      1021
+    ]
+  },
+  {
+    "key": "nfcplan",
+    "phase": "2 计划",
+    "stream": "功能选配",
+    "name": "NFC用途、密钥责任与生态接入策划",
+    "days": 8,
+    "deps": [
+      "arch"
+    ],
+    "scope": "NFC",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "NFC用途与合作计划",
+    "accept": "门禁、公交或支付按选定用途界定，确认商务与安全边界",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1024,
+    "wbs": "2.04.02",
+    "pred": [
+      1022
+    ]
+  },
+  {
+    "key": "lteplan",
+    "phase": "2 计划",
+    "stream": "功能选配",
+    "name": "LTE/eSIM频段、运营商及平台接入策划",
+    "days": 10,
+    "deps": [
+      "arch"
+    ],
+    "scope": "LTE",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "蜂窝与运营商准入计划",
+    "accept": "明确地区频段、VoLTE/紧急功能适用性及外部依赖",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1025,
+    "wbs": "2.04.03",
+    "pred": [
+      1022
+    ]
+  },
+  {
+    "key": "wifiplan",
+    "phase": "2 计划",
+    "stream": "功能选配",
+    "name": "Wi-Fi频段、共存与场景策划",
+    "days": 5,
+    "deps": [
+      "arch"
+    ],
+    "scope": "WIFI",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "Wi-Fi规格",
+    "accept": "频段、吞吐、功耗、共存和市场限制明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1026,
+    "wbs": "2.04.04",
+    "pred": [
+      1022
+    ]
+  },
+  {
+    "key": "ecgplan",
+    "phase": "2 计划",
+    "stream": "功能选配",
+    "name": "ECG电极、算法和用途边界策划",
+    "days": 8,
+    "deps": [
+      "srs",
+      "stack"
+    ],
+    "scope": "ECG",
+    "owner": "算法",
+    "approver": "PDT负责人",
+    "output": "ECG规格与验证方案",
+    "accept": "确认电极接触、信号质量与健康/医疗用途边界",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1027,
+    "wbs": "2.04.05",
+    "pred": [
+      1018,
+      1021
+    ]
+  },
+  {
+    "key": "medroute",
+    "phase": "2 计划",
+    "stream": "法规与认证",
+    "name": "医疗用途分类、注册路径与专项项目计划",
+    "days": 15,
+    "deps": [
+      "claim",
+      "srs"
+    ],
+    "scope": "MED",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "分类意见/注册及临床专项计划",
+    "accept": "由法规负责人确认地区路径、QMS、证据、预算和真实周期",
+    "kind": "任务",
+    "gate": "",
+    "note": "此工作包只做路线策划；启用医疗功能后须另建经批准的详细注册/临床子计划，模板工期不代表审批周期",
+    "consult": "相关领域代表",
+    "id": 1028,
+    "wbs": "2.05.01",
+    "pred": [
+      1005,
+      1018
+    ]
+  },
+  {
+    "key": "testplan",
+    "phase": "2 计划",
+    "stream": "质量与可靠性",
+    "name": "DVP&R与整机验证总体计划",
+    "days": 10,
+    "deps": [
+      "srs",
+      "arch"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "QA",
+    "output": "DVP&R/样本与设备计划",
+    "accept": "需求到用例追踪，试验条件、样本量、判据和复测规则获批",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1029,
+    "wbs": "2.06.01",
+    "pred": [
+      1018,
+      1022
+    ]
+  },
+  {
+    "key": "qualplan",
+    "phase": "2 计划",
+    "stream": "质量与可靠性",
+    "name": "DFMEA、可靠性任务剖面与安全风险分析",
+    "days": 8,
+    "deps": [
+      "srs",
+      "stack"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "PDT负责人",
+    "output": "DFMEA/可靠性计划",
+    "accept": "覆盖进液、电池热、皮肤接触、跌落及误测危害",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1030,
+    "wbs": "2.06.02",
+    "pred": [
+      1018,
+      1021
+    ]
+  },
+  {
+    "key": "regplan",
+    "phase": "2 计划",
+    "stream": "法规与认证",
+    "name": "目标市场认证适用性、标准版本与送样计划",
+    "days": 8,
+    "deps": [
+      "claim",
+      "arch"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "认证矩阵/报价/实验室计划",
+    "accept": "每项有适用性结论、法源、样机配置、责任人与周期",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1031,
+    "wbs": "2.05.02",
+    "pred": [
+      1005,
+      1022
+    ]
+  },
+  {
+    "key": "secplan",
+    "phase": "2 计划",
+    "stream": "安全与隐私",
+    "name": "威胁建模、数据地图及隐私需求",
+    "days": 8,
+    "deps": [
+      "arch",
+      "claim"
+    ],
+    "scope": "BASE",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "威胁模型/数据与安全要求",
+    "accept": "覆盖配对、密钥、健康/位置数据、未成年人适用性及云边界",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1032,
+    "wbs": "2.07.01",
+    "pred": [
+      1022,
+      1005
+    ]
+  },
+  {
+    "key": "swplan",
+    "phase": "2 计划",
+    "stream": "软件与平台",
+    "name": "软件迭代、持续集成及配置管理计划",
+    "days": 5,
+    "deps": [
+      "arch"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "发布列车/CI/配置规则",
+    "accept": "统一需求、代码、硬件、算法、App和云版本标识",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1033,
+    "wbs": "2.08.01",
+    "pred": [
+      1022
+    ]
+  },
+  {
+    "key": "appplan",
+    "phase": "2 计划",
+    "stream": "App与云",
+    "name": "App/手机OS兼容与商店发布计划",
+    "days": 6,
+    "deps": [
+      "arch"
+    ],
+    "scope": "APP",
+    "owner": "App",
+    "approver": "PDT负责人",
+    "output": "App兼容矩阵/上架计划",
+    "accept": "目标iOS/Android版本、权限和商店政策复核计划明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1034,
+    "wbs": "2.09.01",
+    "pred": [
+      1022
+    ]
+  },
+  {
+    "key": "cloudplan",
+    "phase": "2 计划",
+    "stream": "App与云",
+    "name": "云容量、运维、数据驻留与第三方服务策划",
+    "days": 7,
+    "deps": [
+      "arch",
+      "secplan"
+    ],
+    "scope": "CLOUD",
+    "owner": "云端",
+    "approver": "PDT负责人",
+    "output": "云架构/SLA/成本预算",
+    "accept": "明确区域、备份、恢复、可观测性及供应商责任",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1035,
+    "wbs": "2.09.02",
+    "pred": [
+      1022,
+      1032
+    ]
+  },
+  {
+    "key": "npi",
+    "phase": "2 计划",
+    "stream": "制造与供应链",
+    "name": "NPI、DFM/DFA/DFT及工厂能力策划",
+    "days": 8,
+    "deps": [
+      "stack",
+      "arch"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "制造方案/工装设备清单",
+    "accept": "产测、校准、气密和追溯方案具备可行性",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1036,
+    "wbs": "2.10.01",
+    "pred": [
+      1021,
+      1022
+    ]
+  },
+  {
+    "key": "toolplan",
+    "phase": "2 计划",
+    "stream": "制造与供应链",
+    "name": "模具、工装及治具交期与投资策划",
+    "days": 6,
+    "deps": [
+      "stack",
+      "npi"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "模具/治具计划与预算",
+    "accept": "识别T0/T1/T2、修模及备份节拍",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1037,
+    "wbs": "2.10.02",
+    "pred": [
+      1021,
+      1036
+    ]
+  },
+  {
+    "key": "supplier",
+    "phase": "2 计划",
+    "stream": "制造与供应链",
+    "name": "供应商定点、质量协议与备选料策略",
+    "days": 10,
+    "deps": [
+      "supply0",
+      "regplan"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "AVL/供应商质量协议",
+    "accept": "关键规格、PCN/EOL、产能和交付责任确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1038,
+    "wbs": "2.10.03",
+    "pred": [
+      1012,
+      1031
+    ]
+  },
+  {
+    "key": "finance",
+    "phase": "2 计划",
+    "stream": "项目策划",
+    "name": "最终商业计划、预算与目标成本分解",
+    "days": 6,
+    "deps": [
+      "biz0",
+      "supplier",
+      "toolplan"
+    ],
+    "scope": "BASE",
+    "owner": "财务",
+    "approver": "PDT负责人",
+    "output": "商业计划/NRE/OPEX/目标BOM",
+    "accept": "假设更新，分阶段投资、量产成本及盈亏风险确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1039,
+    "wbs": "2.01.02",
+    "pred": [
+      1013,
+      1038,
+      1037
+    ]
+  },
+  {
+    "key": "wbsplan",
+    "phase": "2 计划",
+    "stream": "项目策划",
+    "name": "WBS、依赖、资源及风险基线编制",
+    "days": 6,
+    "deps": [
+      "pdt",
+      "testplan",
+      "npi"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "批准候选计划/风险台账",
+    "accept": "责任到人、交付物明确，长交期和认证路径进入主计划",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1040,
+    "wbs": "2.01.03",
+    "pred": [
+      1017,
+      1029,
+      1036
+    ]
+  },
+  {
+    "key": "tr2",
+    "phase": "2 计划",
+    "stream": "技术评审",
+    "name": "TR2：产品规格与需求可验证性评审",
+    "days": 0,
+    "deps": [
+      "srs",
+      "testplan",
+      "regplan",
+      "secplan"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "技术评审组",
+    "output": "TR2纪要/SRS基线",
+    "accept": "产品规格完整、可测，未决要求具有关闭计划",
+    "kind": "评审",
+    "gate": "TR2",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1041,
+    "wbs": "2.11.01",
+    "pred": [
+      1018,
+      1029,
+      1031,
+      1032
+    ]
+  },
+  {
+    "key": "tr3",
+    "phase": "2 计划",
+    "stream": "技术评审",
+    "name": "TR3：总体方案与开发准备评审",
+    "days": 0,
+    "deps": [
+      "tr2",
+      "stack",
+      "arch",
+      "qualplan"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "技术评审组",
+    "output": "TR3纪要/架构基线",
+    "accept": "跨域接口、风险和制造验证方案确认",
+    "kind": "评审",
+    "gate": "TR3",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1042,
+    "wbs": "2.11.02",
+    "pred": [
+      1041,
+      1021,
+      1022,
+      1030
+    ]
+  },
+  {
+    "key": "planextra",
+    "phase": "2 计划",
+    "stream": "项目策划",
+    "name": "选配功能与端云计划汇总关闭",
+    "days": 3,
+    "deps": [
+      "lteplan",
+      "nfcplan",
+      "ecgplan",
+      "medroute"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "选配子计划/外部依赖清单",
+    "accept": "启用功能有独立里程碑与责任人；不适用项留裁剪依据",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1043,
+    "wbs": "2.01.04",
+    "pred": [
+      1025,
+      1024,
+      1027,
+      1028
+    ]
+  },
+  {
+    "key": "planextra2",
+    "phase": "2 计划",
+    "stream": "项目策划",
+    "name": "平台、定位及App/云计划一致性检查",
+    "days": 2,
+    "deps": [
+      "gnssplan",
+      "wifiplan",
+      "appplan",
+      "cloudplan"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "跨域计划一致性记录",
+    "accept": "选配与平台接口、资源、迭代节奏一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1044,
+    "wbs": "2.01.05",
+    "pred": [
+      1023,
+      1026,
+      1034,
+      1035
+    ]
+  },
+  {
+    "key": "pdcp",
+    "phase": "2 计划",
+    "stream": "投资决策",
+    "name": "PDCP：计划投资决策与项目承诺",
+    "days": 0,
+    "deps": [
+      "tr3",
+      "finance",
+      "wbsplan",
+      "planextra"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "IPMT",
+    "output": "PDCP决议/项目合同/计划基线",
+    "accept": "范围、资源、进度、成本、质量和风险经授权承诺",
+    "kind": "评审",
+    "gate": "PDCP",
+    "note": "planextra2、ux、toolplan等也通过开发入口任务控制，评审资料须整体核验",
+    "consult": "相关领域代表",
+    "id": 1045,
+    "wbs": "2.12.01",
+    "pred": [
+      1042,
+      1039,
+      1040,
+      1043
+    ]
+  },
+  {
+    "key": "kick",
+    "phase": "3 开发",
+    "stream": "开发统筹",
+    "name": "开发基线发布与跨域启动",
+    "days": 2,
+    "deps": [
+      "pdcp",
+      "planextra2",
+      "ux",
+      "swplan"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "开发基线/迭代计划",
+    "accept": "各领域使用相同产品配置及接口版本",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1046,
+    "wbs": "3.01.01",
+    "pred": [
+      1045,
+      1044,
+      1019,
+      1033
+    ]
+  },
+  {
+    "key": "sch",
+    "phase": "3 开发",
+    "stream": "硬件与射频",
+    "name": "原理图、电源时序及保护电路设计",
+    "days": 15,
+    "deps": [
+      "kick"
+    ],
+    "scope": "BASE",
+    "owner": "硬件",
+    "approver": "PDT负责人",
+    "output": "原理图/设计计算",
+    "accept": "完成接口、功耗、保护和关键器件降额评审",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1047,
+    "wbs": "3.02.01",
+    "pred": [
+      1046
+    ]
+  },
+  {
+    "key": "rfdesign",
+    "phase": "3 开发",
+    "stream": "硬件与射频",
+    "name": "蓝牙射频、天线及人体加载仿真",
+    "days": 15,
+    "deps": [
+      "kick",
+      "stack"
+    ],
+    "scope": "BASE",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "天线/RF设计",
+    "accept": "匹配、净空、共存与人体场景有设计依据",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1048,
+    "wbs": "3.02.02",
+    "pred": [
+      1046,
+      1021
+    ]
+  },
+  {
+    "key": "pcb",
+    "phase": "3 开发",
+    "stream": "硬件与射频",
+    "name": "PCB Layout、SI/PI/EMC及可制造性评审",
+    "days": 15,
+    "deps": [
+      "sch",
+      "rfdesign"
+    ],
+    "scope": "BASE",
+    "owner": "硬件",
+    "approver": "PDT负责人",
+    "output": "PCB/Gerber/评审记录",
+    "accept": "高速、射频、模拟地、充电回路和生产可测性检查通过",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1049,
+    "wbs": "3.02.03",
+    "pred": [
+      1047,
+      1048
+    ]
+  },
+  {
+    "key": "md",
+    "phase": "3 开发",
+    "stream": "结构与模具",
+    "name": "结构详设、密封、声学及表带快拆设计",
+    "days": 20,
+    "deps": [
+      "kick",
+      "stack"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "3D/2D图纸/公差链",
+    "accept": "密封压缩量、公差、胶路、跌落和装配可控",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1050,
+    "wbs": "3.03.01",
+    "pred": [
+      1046,
+      1021
+    ]
+  },
+  {
+    "key": "optical",
+    "phase": "3 开发",
+    "stream": "结构与模具",
+    "name": "PPG光学窗口、遮光与接触压力设计",
+    "days": 12,
+    "deps": [
+      "md",
+      "sensor0"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "光路/光学材料/接触方案",
+    "accept": "抑制串光、漏光，兼顾肤色与佩戴适应性",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1051,
+    "wbs": "3.03.02",
+    "pred": [
+      1050,
+      1009
+    ]
+  },
+  {
+    "key": "cmf",
+    "phase": "3 开发",
+    "stream": "结构与模具",
+    "name": "CMF、接触材料和供应商工艺验证",
+    "days": 15,
+    "deps": [
+      "md"
+    ],
+    "scope": "BASE",
+    "owner": "ID/UX",
+    "approver": "PDT负责人",
+    "output": "CMF封样/材料规范",
+    "accept": "外观、汗液、腐蚀、涂层及皮肤接触风险可验证",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1052,
+    "wbs": "3.03.03",
+    "pred": [
+      1050
+    ]
+  },
+  {
+    "key": "mold",
+    "phase": "3 开发",
+    "stream": "结构与模具",
+    "name": "模具开模、T0/T1与尺寸测量",
+    "days": 30,
+    "deps": [
+      "md",
+      "toolplan"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "T1样件/尺寸报告",
+    "accept": "关键尺寸与装配缺陷形成闭环计划",
+    "kind": "任务",
+    "gate": "",
+    "note": "开模作为PDCP后投入；提前开模应单独批准风险投资",
+    "consult": "相关领域代表",
+    "id": 1053,
+    "wbs": "3.03.04",
+    "pred": [
+      1050,
+      1037
+    ]
+  },
+  {
+    "key": "evtmat",
+    "phase": "3 开发",
+    "stream": "硬件与射频",
+    "name": "EVT物料、PCB制板与SMT准备",
+    "days": 15,
+    "deps": [
+      "pcb",
+      "supplier"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "EVT齐套表/PCBA",
+    "accept": "关键物料追溯、替代料和焊接质量确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1054,
+    "wbs": "3.02.04",
+    "pred": [
+      1049,
+      1038
+    ]
+  },
+  {
+    "key": "bsp",
+    "phase": "3 开发",
+    "stream": "固件与系统",
+    "name": "BSP、驱动与板级Bring-up",
+    "days": 20,
+    "deps": [
+      "evtmat"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "驱动/Bring-up记录",
+    "accept": "显示、触控、传感器、存储、通信和电源基本工作",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1055,
+    "wbs": "3.04.01",
+    "pred": [
+      1054
+    ]
+  },
+  {
+    "key": "boot",
+    "phase": "3 开发",
+    "stream": "固件与系统",
+    "name": "启动链、签名、密钥与工厂烧录架构实现",
+    "days": 15,
+    "deps": [
+      "kick",
+      "secplan"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "安全启动/密钥方案",
+    "accept": "调试权限、密钥注入和恢复路径经过评审",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1056,
+    "wbs": "3.04.02",
+    "pred": [
+      1046,
+      1032
+    ]
+  },
+  {
+    "key": "fwcore",
+    "phase": "3 开发",
+    "stream": "固件与系统",
+    "name": "系统服务、UI、通知、表盘与基础应用",
+    "days": 30,
+    "deps": [
+      "kick",
+      "ux"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "固件功能版本",
+    "accept": "基础用户路径、异常恢复及配置符合规格",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1057,
+    "wbs": "3.04.03",
+    "pred": [
+      1046,
+      1019
+    ]
+  },
+  {
+    "key": "ble",
+    "phase": "3 开发",
+    "stream": "固件与系统",
+    "name": "蓝牙协议、连接、通话/音频按需实现",
+    "days": 20,
+    "deps": [
+      "bsp"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "蓝牙/音频功能",
+    "accept": "配对、重连、权限、干扰与典型手机兼容可测试",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1058,
+    "wbs": "3.04.04",
+    "pred": [
+      1055
+    ]
+  },
+  {
+    "key": "powerfw",
+    "phase": "3 开发",
+    "stream": "固件与系统",
+    "name": "低功耗、充电策略与热保护实现",
+    "days": 20,
+    "deps": [
+      "bsp",
+      "power0"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "功耗控制/充电策略",
+    "accept": "覆盖休眠、唤醒、边充边用、低电量及温度保护",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1059,
+    "wbs": "3.04.05",
+    "pred": [
+      1055,
+      1011
+    ]
+  },
+  {
+    "key": "ota",
+    "phase": "3 开发",
+    "stream": "固件与系统",
+    "name": "OTA、差分/全量升级与失败恢复实现",
+    "days": 15,
+    "deps": [
+      "boot",
+      "fwcore"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "OTA链路/恢复机制",
+    "accept": "升级签名、掉电保护、兼容性及回滚规则明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1060,
+    "wbs": "3.04.06",
+    "pred": [
+      1056,
+      1057
+    ]
+  },
+  {
+    "key": "alg",
+    "phase": "3 开发",
+    "stream": "运动健康",
+    "name": "心率/血氧/睡眠/运动算法集成与版本管理",
+    "days": 25,
+    "deps": [
+      "kick",
+      "sensor0"
+    ],
+    "scope": "BASE",
+    "owner": "算法",
+    "approver": "PDT负责人",
+    "output": "算法版本/接口/评估脚本",
+    "accept": "数据来源、算法版本、场景限制和可复现性明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1061,
+    "wbs": "3.05.01",
+    "pred": [
+      1046,
+      1009
+    ]
+  },
+  {
+    "key": "dataset",
+    "phase": "3 开发",
+    "stream": "运动健康",
+    "name": "算法验证数据、招募与授权准备",
+    "days": 20,
+    "deps": [
+      "kick",
+      "testplan",
+      "secplan"
+    ],
+    "scope": "BASE",
+    "owner": "算法",
+    "approver": "PDT负责人",
+    "output": "人群与场景数据计划",
+    "accept": "覆盖肤色、年龄、佩戴、运动强度，数据取得合法授权",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1062,
+    "wbs": "3.05.02",
+    "pred": [
+      1046,
+      1029,
+      1032
+    ]
+  },
+  {
+    "key": "appdev",
+    "phase": "3 开发",
+    "stream": "App与云",
+    "name": "App绑定、设置、数据展示与账号功能开发",
+    "days": 35,
+    "deps": [
+      "kick",
+      "appplan"
+    ],
+    "scope": "APP",
+    "owner": "App",
+    "approver": "PDT负责人",
+    "output": "App Alpha",
+    "accept": "端到端数据语义、权限、离线、注销及错误提示可用",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1063,
+    "wbs": "3.06.01",
+    "pred": [
+      1046,
+      1034
+    ]
+  },
+  {
+    "key": "clouddev",
+    "phase": "3 开发",
+    "stream": "App与云",
+    "name": "云服务、API、数据处理及可观测性开发",
+    "days": 30,
+    "deps": [
+      "kick",
+      "cloudplan"
+    ],
+    "scope": "CLOUD",
+    "owner": "云端",
+    "approver": "PDT负责人",
+    "output": "云服务/接口/监控",
+    "accept": "鉴权、数据隔离、限流、备份及审计具备测试条件",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1064,
+    "wbs": "3.06.02",
+    "pred": [
+      1046,
+      1035
+    ]
+  },
+  {
+    "key": "appint",
+    "phase": "3 开发",
+    "stream": "App与云",
+    "name": "手表—App—云接口联调",
+    "days": 15,
+    "deps": [
+      "appdev",
+      "clouddev",
+      "ble"
+    ],
+    "scope": "APP",
+    "owner": "App",
+    "approver": "PDT负责人",
+    "output": "端到端联调记录",
+    "accept": "同步、时区、单位、账号迁移与异常重试可验证",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1065,
+    "wbs": "3.06.03",
+    "pred": [
+      1063,
+      1064,
+      1058
+    ]
+  },
+  {
+    "key": "gnssdev",
+    "phase": "3 开发",
+    "stream": "选配开发",
+    "name": "GNSS硬件、驱动、星历与定位算法实现",
+    "days": 20,
+    "deps": [
+      "bsp",
+      "gnssplan"
+    ],
+    "scope": "GNSS",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "GNSS功能版本",
+    "accept": "定位、轨迹、授时、天线匹配及功耗进入验证",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1066,
+    "wbs": "3.07.01",
+    "pred": [
+      1055,
+      1023
+    ]
+  },
+  {
+    "key": "nfcdev",
+    "phase": "3 开发",
+    "stream": "选配开发",
+    "name": "NFC天线、固件、密钥及生态联调",
+    "days": 25,
+    "deps": [
+      "bsp",
+      "nfcplan"
+    ],
+    "scope": "NFC",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "NFC功能/生态联调记录",
+    "accept": "按选定用途完成读卡/刷卡、异常及安全路径联调",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1067,
+    "wbs": "3.07.02",
+    "pred": [
+      1055,
+      1024
+    ]
+  },
+  {
+    "key": "ltedev",
+    "phase": "3 开发",
+    "stream": "选配开发",
+    "name": "蜂窝射频、协议、eSIM及运营商联调",
+    "days": 35,
+    "deps": [
+      "bsp",
+      "lteplan"
+    ],
+    "scope": "LTE",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "蜂窝/eSIM Alpha",
+    "accept": "入网、重选、通话/数据及eSIM生命周期进入验证",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1068,
+    "wbs": "3.07.03",
+    "pred": [
+      1055,
+      1025
+    ]
+  },
+  {
+    "key": "wifidev",
+    "phase": "3 开发",
+    "stream": "选配开发",
+    "name": "Wi-Fi驱动、网络配置与蓝牙共存",
+    "days": 20,
+    "deps": [
+      "bsp",
+      "wifiplan"
+    ],
+    "scope": "WIFI",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "Wi-Fi功能版本",
+    "accept": "网络异常、重连、吞吐、功耗及共存进入验证",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1069,
+    "wbs": "3.07.04",
+    "pred": [
+      1055,
+      1026
+    ]
+  },
+  {
+    "key": "ecgdev",
+    "phase": "3 开发",
+    "stream": "选配开发",
+    "name": "ECG模拟前端、电极与算法实现",
+    "days": 25,
+    "deps": [
+      "bsp",
+      "ecgplan"
+    ],
+    "scope": "ECG",
+    "owner": "算法",
+    "approver": "PDT负责人",
+    "output": "ECG功能与信号质量记录",
+    "accept": "静电、接触、电噪声及用途边界符合设计约束",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1070,
+    "wbs": "3.07.05",
+    "pred": [
+      1055,
+      1027
+    ]
+  },
+  {
+    "key": "medsub",
+    "phase": "3 开发",
+    "stream": "选配开发",
+    "name": "医疗专项子计划执行与设计控制证据",
+    "days": 60,
+    "deps": [
+      "medroute",
+      "kick"
+    ],
+    "scope": "MED",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "专项计划证据索引",
+    "accept": "按经批准的注册/临床计划逐项完成，实际周期另行细化",
+    "kind": "任务",
+    "gate": "",
+    "note": "60工作日仅为占位演示，绝不能作为注册、临床或获批周期承诺",
+    "consult": "相关领域代表",
+    "id": 1071,
+    "wbs": "3.07.06",
+    "pred": [
+      1028,
+      1046
+    ]
+  },
+  {
+    "key": "tr4",
+    "phase": "3 开发",
+    "stream": "技术评审",
+    "name": "TR4：详细设计与设计实现准备评审",
+    "days": 0,
+    "deps": [
+      "pcb",
+      "md",
+      "boot",
+      "npi"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "技术评审组",
+    "output": "TR4纪要/详设基线",
+    "accept": "硬件、结构、软件关键详设及DFX风险完成评审",
+    "kind": "评审",
+    "gate": "TR4",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1072,
+    "wbs": "3.08.01",
+    "pred": [
+      1049,
+      1050,
+      1056,
+      1036
+    ]
+  },
+  {
+    "key": "evtbuild",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT整机组装与配置追溯",
+    "days": 7,
+    "deps": [
+      "tr4",
+      "mold",
+      "bsp",
+      "optical"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "EVT样机/Build报告",
+    "accept": "每台SN对应BOM、硬件、固件、工艺及异常记录",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1073,
+    "wbs": "3.09.01",
+    "pred": [
+      1072,
+      1053,
+      1055,
+      1051
+    ]
+  },
+  {
+    "key": "evtfun",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT功能、接口与软硬件集成摸底",
+    "days": 12,
+    "deps": [
+      "evtbuild",
+      "fwcore",
+      "ble",
+      "alg"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "EVT功能报告",
+    "accept": "核心链路可运行，阻塞问题明确复现并分级",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1074,
+    "wbs": "3.09.02",
+    "pred": [
+      1073,
+      1057,
+      1058,
+      1061
+    ]
+  },
+  {
+    "key": "evtphy",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT防水、跌落、声学与光学摸底",
+    "days": 12,
+    "deps": [
+      "evtbuild",
+      "cmf"
+    ],
+    "scope": "BASE",
+    "owner": "可靠性",
+    "approver": "PDT负责人",
+    "output": "EVT物理验证报告",
+    "accept": "密封、跌落、传感和声学薄弱点识别",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1075,
+    "wbs": "3.09.03",
+    "pred": [
+      1073,
+      1052
+    ]
+  },
+  {
+    "key": "evtpower",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT功耗、续航、充电温升与RF摸底",
+    "days": 12,
+    "deps": [
+      "evtbuild",
+      "powerfw",
+      "rfdesign"
+    ],
+    "scope": "BASE",
+    "owner": "硬件",
+    "approver": "PDT负责人",
+    "output": "EVT功耗/RF/热报告",
+    "accept": "与设计预算对照，瓶颈和整改方向明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1076,
+    "wbs": "3.09.04",
+    "pred": [
+      1073,
+      1059,
+      1048
+    ]
+  },
+  {
+    "key": "evtoptions",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT选配功能集成摸底",
+    "days": 10,
+    "deps": [
+      "gnssdev",
+      "nfcdev",
+      "ltedev",
+      "ecgdev"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "选配EVT报告",
+    "accept": "所有启用功能具有可复现的冒烟结果",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1077,
+    "wbs": "3.09.05",
+    "pred": [
+      1066,
+      1067,
+      1068,
+      1070
+    ]
+  },
+  {
+    "key": "evtclose",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT问题归因、方案整改与复测",
+    "days": 12,
+    "deps": [
+      "evtfun",
+      "evtphy",
+      "evtpower",
+      "evtoptions"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "EVT闭环清单",
+    "accept": "架构性风险关闭或有获批的后续验证方案",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1078,
+    "wbs": "3.09.06",
+    "pred": [
+      1074,
+      1075,
+      1076,
+      1077
+    ]
+  },
+  {
+    "key": "evtexit",
+    "phase": "3 开发",
+    "stream": "EVT",
+    "name": "EVT退出/原型验证检查",
+    "days": 0,
+    "deps": [
+      "evtclose",
+      "appint",
+      "wifidev"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "技术评审组",
+    "output": "EVT退出纪要",
+    "accept": "允许转DVT的风险清单、版本及样机需求确认",
+    "kind": "评审",
+    "gate": "EVT退出",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1079,
+    "wbs": "3.09.07",
+    "pred": [
+      1078,
+      1065,
+      1069
+    ]
+  },
+  {
+    "key": "dvtpcb",
+    "phase": "3 开发",
+    "stream": "DVT准备",
+    "name": "DVT硬件/射频改板与制板",
+    "days": 20,
+    "deps": [
+      "evtexit"
+    ],
+    "scope": "BASE",
+    "owner": "硬件",
+    "approver": "PDT负责人",
+    "output": "DVT PCBA/设计变更",
+    "accept": "EVT根因修改完成且版本可追溯",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1080,
+    "wbs": "3.10.01",
+    "pred": [
+      1079
+    ]
+  },
+  {
+    "key": "dvtmd",
+    "phase": "3 开发",
+    "stream": "DVT准备",
+    "name": "DVT修模、T2、密封和公差优化",
+    "days": 20,
+    "deps": [
+      "evtexit"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "DVT结构件/尺寸报告",
+    "accept": "结构问题关闭，材料与工艺接近量产状态",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1081,
+    "wbs": "3.10.02",
+    "pred": [
+      1079
+    ]
+  },
+  {
+    "key": "fwcomplete",
+    "phase": "3 开发",
+    "stream": "DVT准备",
+    "name": "固件功能完成与系统稳定性加固",
+    "days": 20,
+    "deps": [
+      "evtexit",
+      "ota"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "Feature Complete固件",
+    "accept": "规格内功能实现，异常恢复及接口兼容满足测试入口",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1082,
+    "wbs": "3.10.03",
+    "pred": [
+      1079,
+      1060
+    ]
+  },
+  {
+    "key": "appcomplete",
+    "phase": "3 开发",
+    "stream": "DVT准备",
+    "name": "App/云Beta与兼容性加固",
+    "days": 20,
+    "deps": [
+      "evtexit",
+      "appint"
+    ],
+    "scope": "APP",
+    "owner": "App",
+    "approver": "PDT负责人",
+    "output": "App/云Beta版本",
+    "accept": "核心用户路径可验证，重大联调问题关闭",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1083,
+    "wbs": "3.10.04",
+    "pred": [
+      1079,
+      1065
+    ]
+  },
+  {
+    "key": "secimpl",
+    "phase": "3 开发",
+    "stream": "DVT准备",
+    "name": "安全与隐私控制实现及自检",
+    "days": 15,
+    "deps": [
+      "evtexit",
+      "secplan",
+      "boot"
+    ],
+    "scope": "BASE",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "控制实现/扫描结果/SBOM",
+    "accept": "鉴权、加密、日志脱敏、权限与数据生命周期有实现证据",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1084,
+    "wbs": "3.10.05",
+    "pred": [
+      1079,
+      1032,
+      1056
+    ]
+  },
+  {
+    "key": "jigs",
+    "phase": "3 开发",
+    "stream": "产测与工艺",
+    "name": "产测夹具、ATE、气密及校准设备开发",
+    "days": 30,
+    "deps": [
+      "tr4",
+      "npi"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "产测/校准治具与软件",
+    "accept": "RF、显示、传感、电流、气密和追溯有工站方案",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1085,
+    "wbs": "3.11.01",
+    "pred": [
+      1072,
+      1036
+    ]
+  },
+  {
+    "key": "sop0",
+    "phase": "3 开发",
+    "stream": "产测与工艺",
+    "name": "工艺流程、PFMEA与控制计划初版",
+    "days": 15,
+    "deps": [
+      "evtbuild",
+      "npi"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "流程图/PFMEA/控制计划",
+    "accept": "关键工序、防错、返修及密封质量控制明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1086,
+    "wbs": "3.11.02",
+    "pred": [
+      1073,
+      1036
+    ]
+  },
+  {
+    "key": "packdev",
+    "phase": "3 开发",
+    "stream": "包装与配件",
+    "name": "充电配件、包装结构及运输方案开发",
+    "days": 20,
+    "deps": [
+      "kick",
+      "idfreeze",
+      "regplan"
+    ],
+    "scope": "BASE",
+    "owner": "结构",
+    "approver": "PDT负责人",
+    "output": "配件/包装设计",
+    "accept": "充电防呆、标识、运输保护及配件合规范围确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1087,
+    "wbs": "3.12.01",
+    "pred": [
+      1046,
+      1020,
+      1031
+    ]
+  },
+  {
+    "key": "dvtbuild",
+    "phase": "3 开发",
+    "stream": "DVT准备",
+    "name": "DVT整机试制、样机分配及配置审计",
+    "days": 8,
+    "deps": [
+      "dvtpcb",
+      "dvtmd",
+      "fwcomplete",
+      "secimpl"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "DVT样机/版本及分配表",
+    "accept": "测试、认证、Beta样机数量和配置满足批准计划",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1088,
+    "wbs": "3.10.06",
+    "pred": [
+      1080,
+      1081,
+      1082,
+      1084
+    ]
+  },
+  {
+    "key": "sit",
+    "phase": "3 开发",
+    "stream": "系统集成",
+    "name": "系统集成测试与端到端功能覆盖",
+    "days": 15,
+    "deps": [
+      "dvtbuild",
+      "appcomplete",
+      "ota",
+      "evtoptions"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "SIT报告/覆盖矩阵",
+    "accept": "产品包关键路径覆盖，阻塞缺陷闭环可审计",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1089,
+    "wbs": "3.13.01",
+    "pred": [
+      1088,
+      1083,
+      1060,
+      1077
+    ]
+  },
+  {
+    "key": "tr5",
+    "phase": "3 开发",
+    "stream": "技术评审",
+    "name": "TR5：集成版本质量与验证入口评审",
+    "days": 0,
+    "deps": [
+      "sit",
+      "evtexit",
+      "dataset",
+      "packdev"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "技术评审组",
+    "output": "TR5纪要/验证基线",
+    "accept": "产品包具备正式验证条件，风险、配置及DVP入口核准",
+    "kind": "评审",
+    "gate": "TR5",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1090,
+    "wbs": "3.08.02",
+    "pred": [
+      1089,
+      1079,
+      1062,
+      1087
+    ]
+  },
+  {
+    "key": "dvtfunc",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "DVT功能、性能、压力及长稳验证",
+    "days": 20,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "功能/性能/长稳报告",
+    "accept": "覆盖SRS和边界条件，缺陷分级及复测证据完整",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1091,
+    "wbs": "4.01.01",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtrel",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "可靠性：温湿度、冷热冲击、跌落与振动",
+    "days": 25,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "可靠性",
+    "approver": "PDT负责人",
+    "output": "可靠性报告",
+    "accept": "按批准任务剖面、样本量和失效准则执行",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1092,
+    "wbs": "4.01.02",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtwater",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "防水、动态佩戴、声学膜及老化后复测",
+    "days": 20,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "可靠性",
+    "approver": "PDT负责人",
+    "output": "防水/声学/老化报告",
+    "accept": "按承诺使用场景和方法验收，覆盖老化及装配变差",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1093,
+    "wbs": "4.01.03",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtsurface",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "汗液、盐雾、磨耗、按键与表带耐久",
+    "days": 20,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "可靠性",
+    "approver": "PDT负责人",
+    "output": "材料/外观/耐久报告",
+    "accept": "接触材料、涂层和连接机构达到批准规格",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1094,
+    "wbs": "4.01.04",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtbattery",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "电池、充电安全、寿命与整机温升",
+    "days": 25,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "硬件",
+    "approver": "PDT负责人",
+    "output": "电池/充电/温升报告",
+    "accept": "正常、异常、保护及老化工况达到批准安全目标",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1095,
+    "wbs": "4.01.05",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtendurance",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "典型/重度场景续航及功耗回归",
+    "days": 15,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "续航模型与实测",
+    "accept": "亮度、采样、连接、定位等条件锁定，可重复达到已批目标",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1096,
+    "wbs": "4.01.06",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtrf",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "RF、EMC、ESD及人体佩戴共存验证",
+    "days": 20,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "RF/EMC/ESD报告",
+    "accept": "覆盖整机、配件、佩戴及启用无线组合",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1097,
+    "wbs": "4.01.07",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "dvtalg",
+    "phase": "4 验证",
+    "stream": "运动健康验证",
+    "name": "心率/血氧/睡眠/运动准确度与泛化验证",
+    "days": 25,
+    "deps": [
+      "tr5",
+      "dataset"
+    ],
+    "scope": "BASE",
+    "owner": "算法",
+    "approver": "QA",
+    "output": "算法独立验证报告",
+    "accept": "按批准参考方法、人群分层、样本和统计判据验收",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1098,
+    "wbs": "4.02.01",
+    "pred": [
+      1090,
+      1062
+    ]
+  },
+  {
+    "key": "dvtgnss",
+    "phase": "4 验证",
+    "stream": "运动健康验证",
+    "name": "GNSS静态、动态轨迹与复杂环境验证",
+    "days": 20,
+    "deps": [
+      "tr5",
+      "gnssdev"
+    ],
+    "scope": "GNSS",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "GNSS验证报告",
+    "accept": "按批准的定位、轨迹和功耗目标验收",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1099,
+    "wbs": "4.02.02",
+    "pred": [
+      1090,
+      1066
+    ]
+  },
+  {
+    "key": "dvtnfc",
+    "phase": "4 验证",
+    "stream": "功能选配验证",
+    "name": "NFC用途功能、安全与合作方验收",
+    "days": 20,
+    "deps": [
+      "tr5",
+      "nfcdev"
+    ],
+    "scope": "NFC",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "NFC验证/合作方结论",
+    "accept": "按已选择生态完成真实场景、互操作和安全验证",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1100,
+    "wbs": "4.03.01",
+    "pred": [
+      1090,
+      1067
+    ]
+  },
+  {
+    "key": "dvtlte",
+    "phase": "4 验证",
+    "stream": "功能选配验证",
+    "name": "蜂窝弱场、移动性、eSIM与功耗验证",
+    "days": 25,
+    "deps": [
+      "tr5",
+      "ltedev"
+    ],
+    "scope": "LTE",
+    "owner": "RF",
+    "approver": "PDT负责人",
+    "output": "蜂窝/eSIM验证报告",
+    "accept": "覆盖目标运营商、频段、漫游/切网及异常恢复",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1101,
+    "wbs": "4.03.02",
+    "pred": [
+      1090,
+      1068
+    ]
+  },
+  {
+    "key": "dvtwifi",
+    "phase": "4 验证",
+    "stream": "功能选配验证",
+    "name": "Wi-Fi吞吐、共存、网络异常与安全验证",
+    "days": 15,
+    "deps": [
+      "tr5",
+      "wifidev"
+    ],
+    "scope": "WIFI",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "Wi-Fi验证报告",
+    "accept": "通过批准频段与路由器矩阵，异常场景可恢复",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1102,
+    "wbs": "4.03.03",
+    "pred": [
+      1090,
+      1069
+    ]
+  },
+  {
+    "key": "dvtecg",
+    "phase": "4 验证",
+    "stream": "功能选配验证",
+    "name": "ECG信号质量、精度与使用场景验证",
+    "days": 25,
+    "deps": [
+      "tr5",
+      "ecgdev"
+    ],
+    "scope": "ECG",
+    "owner": "算法",
+    "approver": "PDT负责人",
+    "output": "ECG验证报告",
+    "accept": "按用途、参考方法、人群和统计判据验收；不替代医疗注册",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1103,
+    "wbs": "4.03.04",
+    "pred": [
+      1090,
+      1070
+    ]
+  },
+  {
+    "key": "dvtapp",
+    "phase": "4 验证",
+    "stream": "App与云验证",
+    "name": "手机兼容、权限、升级与国际化验证",
+    "days": 20,
+    "deps": [
+      "tr5",
+      "appcomplete"
+    ],
+    "scope": "APP",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "手机OS/机型兼容报告",
+    "accept": "确认支持范围，覆盖后台、断连、升级、时区和语言",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1104,
+    "wbs": "4.04.01",
+    "pred": [
+      1090,
+      1083
+    ]
+  },
+  {
+    "key": "dvtcloud",
+    "phase": "4 验证",
+    "stream": "App与云验证",
+    "name": "云性能、容灾、数据一致性与监控演练",
+    "days": 20,
+    "deps": [
+      "tr5",
+      "clouddev"
+    ],
+    "scope": "CLOUD",
+    "owner": "云端",
+    "approver": "PDT负责人",
+    "output": "压测/恢复/数据一致性报告",
+    "accept": "容量、恢复目标、告警和跨区数据策略达到已批要求",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1105,
+    "wbs": "4.04.02",
+    "pred": [
+      1090,
+      1064
+    ]
+  },
+  {
+    "key": "dvtsec",
+    "phase": "4 验证",
+    "stream": "安全与隐私验证",
+    "name": "渗透、模糊测试、依赖漏洞及隐私验证",
+    "days": 20,
+    "deps": [
+      "tr5",
+      "secimpl"
+    ],
+    "scope": "BASE",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "安全测试/SBOM/整改报告",
+    "accept": "高风险漏洞与隐私缺口已闭环，残余风险获授权",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1106,
+    "wbs": "4.05.01",
+    "pred": [
+      1090,
+      1084
+    ]
+  },
+  {
+    "key": "dvtota",
+    "phase": "4 验证",
+    "stream": "安全与隐私验证",
+    "name": "OTA断电、回滚、跨版本及批次兼容验证",
+    "days": 15,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "PDT负责人",
+    "output": "OTA兼容/恢复报告",
+    "accept": "覆盖升级异常、签名拒绝、恢复及数据迁移",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1107,
+    "wbs": "4.05.02",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "beta",
+    "phase": "4 验证",
+    "stream": "用户验证",
+    "name": "Beta试戴、用户体验及真实场景验证",
+    "days": 25,
+    "deps": [
+      "tr5",
+      "dvtfunc"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "QA",
+    "output": "Beta报告/体验问题清单",
+    "accept": "招募授权、问题闭环、体验和健康宣称证据可追溯",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1108,
+    "wbs": "4.06.01",
+    "pred": [
+      1090,
+      1091
+    ]
+  },
+  {
+    "key": "regsample",
+    "phase": "4 验证",
+    "stream": "法规认证",
+    "name": "认证样机、软件、BOM与标签配置冻结",
+    "days": 3,
+    "deps": [
+      "tr5",
+      "dvtrf"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "认证样机配置清单",
+    "accept": "报告配置与拟量产配置一致；变更有再评估机制",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1109,
+    "wbs": "4.07.01",
+    "pred": [
+      1090,
+      1097
+    ]
+  },
+  {
+    "key": "btsig",
+    "phase": "4 验证",
+    "stream": "法规认证",
+    "name": "Bluetooth SIG资格、型号与品牌合规完成",
+    "days": 15,
+    "deps": [
+      "regsample"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "Qualified Product记录",
+    "accept": "以适当主体完成流程，上市型号与记录一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "供应商设计资格不自动替代自有品牌产品资格；流程以SIG当前要求为准",
+    "consult": "相关领域代表",
+    "id": 1110,
+    "wbs": "4.07.02",
+    "pred": [
+      1109
+    ]
+  },
+  {
+    "key": "un383",
+    "phase": "4 验证",
+    "stream": "法规认证",
+    "name": "锂电运输UN38.3报告、摘要及包装资料核验",
+    "days": 15,
+    "deps": [
+      "regsample",
+      "dvtbattery"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "适用报告/试验摘要/运输资料",
+    "accept": "型号、电芯/电池包、制造商和运输配置匹配",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1111,
+    "wbs": "4.07.03",
+    "pred": [
+      1109,
+      1095
+    ]
+  },
+  {
+    "key": "cnradio",
+    "phase": "4 验证",
+    "stream": "中国市场",
+    "name": "中国无线电型号核准适用性与办理",
+    "days": 25,
+    "deps": [
+      "regsample"
+    ],
+    "scope": "CN",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "型号核准或书面不适用依据",
+    "accept": "根据频段、功率与目录确认，不将蓝牙一概认作豁免",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1112,
+    "wbs": "4.08.01",
+    "pred": [
+      1109
+    ]
+  },
+  {
+    "key": "cnccc",
+    "phase": "4 验证",
+    "stream": "中国市场",
+    "name": "中国整机/电池/适配器CCC范围判定及取证",
+    "days": 25,
+    "deps": [
+      "regsample"
+    ],
+    "scope": "CN",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "CCC适用结论/有效证书",
+    "accept": "按目录和产品界定确认，核对电池与随附电源配置",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1113,
+    "wbs": "4.08.02",
+    "pred": [
+      1109
+    ]
+  },
+  {
+    "key": "cnprivacy",
+    "phase": "4 验证",
+    "stream": "中国市场",
+    "name": "中国隐私、App与数据合规验收",
+    "days": 20,
+    "deps": [
+      "dvtsec",
+      "dvtapp"
+    ],
+    "scope": "CN",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "适用清单/整改与验收",
+    "accept": "权限、健康/位置数据、账号注销及跨境场景经责任人确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1114,
+    "wbs": "4.08.03",
+    "pred": [
+      1106,
+      1104
+    ]
+  },
+  {
+    "key": "cnnetwork",
+    "phase": "4 验证",
+    "stream": "中国市场",
+    "name": "蜂窝产品中国进网/运营商要求核验与办理",
+    "days": 35,
+    "deps": [
+      "regsample",
+      "dvtlte"
+    ],
+    "scope": "LTE_CN",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "适用准入证据",
+    "accept": "依现行目录及目标运营商确认，取得适用准入文件",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1115,
+    "wbs": "4.08.04",
+    "pred": [
+      1109,
+      1101
+    ]
+  },
+  {
+    "key": "eured",
+    "phase": "4 验证",
+    "stream": "欧盟市场",
+    "name": "欧盟RED、RF暴露、EMC与安全符合性",
+    "days": 30,
+    "deps": [
+      "regsample"
+    ],
+    "scope": "EU",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "测试/技术文件/DoC资料",
+    "accept": "频段、使用配置及符合性评定路径由负责人确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1116,
+    "wbs": "4.09.01",
+    "pred": [
+      1109
+    ]
+  },
+  {
+    "key": "eucyber",
+    "phase": "4 验证",
+    "stream": "欧盟市场",
+    "name": "欧盟网络安全、CRA时间适用性与数据要求",
+    "days": 25,
+    "deps": [
+      "regsample",
+      "dvtsec"
+    ],
+    "scope": "EU",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "RED/CRA/数据要求适用结论",
+    "accept": "按实际投放日期复核适用义务、报告与支持期；登记法源版本",
+    "kind": "任务",
+    "gate": "",
+    "note": "RED网络安全相关要求自2025-08-01适用；2026/339规定相关授权法规自2027-12-11起废止，按投放日期复核CRA衔接",
+    "consult": "相关领域代表",
+    "id": 1117,
+    "wbs": "4.09.02",
+    "pred": [
+      1109,
+      1106
+    ]
+  },
+  {
+    "key": "eumat",
+    "phase": "4 验证",
+    "stream": "欧盟市场",
+    "name": "欧盟材料、电池、废弃物与包装义务核验",
+    "days": 25,
+    "deps": [
+      "regsample"
+    ],
+    "scope": "EU",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "材料/电池/注册等合规档案",
+    "accept": "适用RoHS/REACH、电池、WEEE及包装义务逐项确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1118,
+    "wbs": "4.09.03",
+    "pred": [
+      1109
+    ]
+  },
+  {
+    "key": "usfcc",
+    "phase": "4 验证",
+    "stream": "美国市场",
+    "name": "美国FCC授权、RF暴露与标签要求完成",
+    "days": 30,
+    "deps": [
+      "regsample"
+    ],
+    "scope": "US",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "适用授权/测试/标签文件",
+    "accept": "整机配置、模块集成条件及实验室资格有效且一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1119,
+    "wbs": "4.10.01",
+    "pred": [
+      1109
+    ]
+  },
+  {
+    "key": "usprivacy",
+    "phase": "4 验证",
+    "stream": "美国市场",
+    "name": "美国目标州隐私及健康宣称适用性核验",
+    "days": 20,
+    "deps": [
+      "dvtsec",
+      "dvtapp"
+    ],
+    "scope": "US",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "市场适用结论/验收",
+    "accept": "依据目标用户、州及用途确认数据和宣称边界",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1120,
+    "wbs": "4.10.02",
+    "pred": [
+      1106,
+      1104
+    ]
+  },
+  {
+    "key": "operator",
+    "phase": "4 验证",
+    "stream": "蜂窝准入",
+    "name": "目标运营商/GCF/PTCRB等适用准入完成",
+    "days": 40,
+    "deps": [
+      "regsample",
+      "dvtlte"
+    ],
+    "scope": "LTE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "适用准入/合作方验收记录",
+    "accept": "按市场及运营商确定项目，全部适用准入已完成",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1121,
+    "wbs": "4.11.01",
+    "pred": [
+      1109,
+      1101
+    ]
+  },
+  {
+    "key": "medapproval",
+    "phase": "4 验证",
+    "stream": "医疗专项",
+    "name": "医疗注册/许可及临床证据放行核验",
+    "days": 60,
+    "deps": [
+      "medsub",
+      "dvtecg"
+    ],
+    "scope": "MED",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "适用许可/证据/标签批准",
+    "accept": "取得实际适用许可和证据方可放行；无许可不能用排期替代",
+    "kind": "任务",
+    "gate": "",
+    "note": "60工作日只为演示占位，必须替换成经批准的专项计划及获批条件",
+    "consult": "相关领域代表",
+    "id": 1122,
+    "wbs": "4.12.01",
+    "pred": [
+      1071,
+      1103
+    ]
+  },
+  {
+    "key": "regbase",
+    "phase": "4 验证",
+    "stream": "认证汇总",
+    "name": "基础与中国市场认证资料汇总",
+    "days": 3,
+    "deps": [
+      "btsig",
+      "un383",
+      "cnradio",
+      "cnccc"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "基础/中国认证证据包",
+    "accept": "所有启用项目有完成或经批准不适用的证据",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1123,
+    "wbs": "4.13.01",
+    "pred": [
+      1110,
+      1111,
+      1112,
+      1113
+    ]
+  },
+  {
+    "key": "regextra",
+    "phase": "4 验证",
+    "stream": "认证汇总",
+    "name": "欧盟、美国及蜂窝认证资料汇总",
+    "days": 3,
+    "deps": [
+      "eured",
+      "eucyber",
+      "usfcc",
+      "operator"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "海外/蜂窝认证证据包",
+    "accept": "全部启用市场与无线配置准入证据完整",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1124,
+    "wbs": "4.13.02",
+    "pred": [
+      1116,
+      1117,
+      1119,
+      1121
+    ]
+  },
+  {
+    "key": "regclose",
+    "phase": "4 验证",
+    "stream": "认证汇总",
+    "name": "法规资料完整性及医疗路径核验",
+    "days": 3,
+    "deps": [
+      "regbase",
+      "regextra",
+      "medapproval",
+      "cnnetwork"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "认证放行清单",
+    "accept": "检查认证矩阵全部项目；缺失项不得以排期完成替代",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1125,
+    "wbs": "4.13.03",
+    "pred": [
+      1123,
+      1124,
+      1122,
+      1115
+    ]
+  },
+  {
+    "key": "reglast",
+    "phase": "4 验证",
+    "stream": "认证汇总",
+    "name": "材料、数据、隐私与市场文件最终核验",
+    "days": 2,
+    "deps": [
+      "eumat",
+      "cnprivacy",
+      "usprivacy",
+      "regclose"
+    ],
+    "scope": "BASE",
+    "owner": "法规认证",
+    "approver": "PDT负责人",
+    "output": "完整市场合规包",
+    "accept": "适用性矩阵所有启用行都具备放行结论",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1126,
+    "wbs": "4.13.04",
+    "pred": [
+      1118,
+      1114,
+      1120,
+      1125
+    ]
+  },
+  {
+    "key": "fix1",
+    "phase": "4 验证",
+    "stream": "缺陷与回归",
+    "name": "DVT主要功能/可靠性问题整改与复测",
+    "days": 15,
+    "deps": [
+      "dvtrel",
+      "dvtwater",
+      "dvtbattery",
+      "dvtalg"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "DVT问题关闭证据",
+    "accept": "根因、纠正措施及影响范围回归齐全",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1127,
+    "wbs": "4.14.01",
+    "pred": [
+      1092,
+      1093,
+      1095,
+      1098
+    ]
+  },
+  {
+    "key": "fix2",
+    "phase": "4 验证",
+    "stream": "缺陷与回归",
+    "name": "选配功能与端云问题整改与复测",
+    "days": 12,
+    "deps": [
+      "dvtgnss",
+      "dvtnfc",
+      "dvtlte",
+      "dvtecg"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "选配问题关闭证据",
+    "accept": "启用功能的高风险问题关闭",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1128,
+    "wbs": "4.14.02",
+    "pred": [
+      1099,
+      1100,
+      1101,
+      1103
+    ]
+  },
+  {
+    "key": "fix3",
+    "phase": "4 验证",
+    "stream": "缺陷与回归",
+    "name": "材料、续航、无线及升级问题闭环",
+    "days": 10,
+    "deps": [
+      "dvtsurface",
+      "dvtendurance",
+      "dvtrf",
+      "dvtota"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "跨域问题关闭证据",
+    "accept": "设计和生产影响评估完成，回归通过",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1129,
+    "wbs": "4.14.03",
+    "pred": [
+      1094,
+      1096,
+      1097,
+      1107
+    ]
+  },
+  {
+    "key": "fix4",
+    "phase": "4 验证",
+    "stream": "缺陷与回归",
+    "name": "App/云/Wi-Fi及安全问题闭环",
+    "days": 10,
+    "deps": [
+      "dvtapp",
+      "dvtcloud",
+      "dvtwifi",
+      "dvtsec"
+    ],
+    "scope": "BASE",
+    "owner": "系统架构",
+    "approver": "PDT负责人",
+    "output": "端云与安全回归证据",
+    "accept": "适用版本缺陷闭环且接口和数据兼容",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1130,
+    "wbs": "4.14.04",
+    "pred": [
+      1104,
+      1105,
+      1102,
+      1106
+    ]
+  },
+  {
+    "key": "dvtexit",
+    "phase": "4 验证",
+    "stream": "设计验证",
+    "name": "DVT退出与设计冻结",
+    "days": 0,
+    "deps": [
+      "fix1",
+      "fix2",
+      "fix3",
+      "fix4"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "技术评审组",
+    "output": "DVT退出/冻结基线",
+    "accept": "需求验证覆盖、设计风险和残余问题可接受，允许PVT",
+    "kind": "评审",
+    "gate": "DVT退出",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1131,
+    "wbs": "4.01.08",
+    "pred": [
+      1127,
+      1128,
+      1129,
+      1130
+    ]
+  },
+  {
+    "key": "pvtprep",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "PVT物料齐套、线体与人员准备",
+    "days": 12,
+    "deps": [
+      "dvtexit",
+      "jigs",
+      "sop0"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "PVT准备清单/齐套表",
+    "accept": "量产候选物料、设备、工艺、人员和追溯就绪",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1132,
+    "wbs": "4.15.01",
+    "pred": [
+      1131,
+      1085,
+      1086
+    ]
+  },
+  {
+    "key": "pvt",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "PVT小批试产及制造过程确认",
+    "days": 10,
+    "deps": [
+      "pvtprep"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "PVT Build报告",
+    "accept": "记录工位、产能、良率、返修和异常，样本按计划",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1133,
+    "wbs": "4.15.02",
+    "pred": [
+      1132
+    ]
+  },
+  {
+    "key": "msa",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "量测系统、产测覆盖与校准相关性验证",
+    "days": 8,
+    "deps": [
+      "pvt"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "QA",
+    "output": "MSA/GR&R或适用量测评价",
+    "accept": "产线与实验室相关性、误判漏判和校准溯源满足已批标准",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1134,
+    "wbs": "4.15.03",
+    "pred": [
+      1133
+    ]
+  },
+  {
+    "key": "yield",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "良率、节拍、产能及关键过程能力验收",
+    "days": 10,
+    "deps": [
+      "pvt"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "QA",
+    "output": "良率/产能/过程能力报告",
+    "accept": "达到项目批准目标；示例目标须由制造与质量签批",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1135,
+    "wbs": "4.15.04",
+    "pred": [
+      1133
+    ]
+  },
+  {
+    "key": "pvtort",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "PVT批次抽检、ORT与包装运输验证",
+    "days": 15,
+    "deps": [
+      "pvt",
+      "packdev"
+    ],
+    "scope": "BASE",
+    "owner": "可靠性",
+    "approver": "PDT负责人",
+    "output": "PVT/ORT/运输报告",
+    "accept": "生产工艺对可靠性无不利影响，运输后功能外观合格",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1136,
+    "wbs": "4.15.05",
+    "pred": [
+      1133,
+      1087
+    ]
+  },
+  {
+    "key": "supplyready",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "量产供应能力、备料与替代料放行",
+    "days": 10,
+    "deps": [
+      "dvtexit",
+      "supplier"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "供应保障/物料放行清单",
+    "accept": "交期、产能、单一来源、PCN和替代料验证闭环",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1137,
+    "wbs": "4.15.06",
+    "pred": [
+      1131,
+      1038
+    ]
+  },
+  {
+    "key": "service",
+    "phase": "4 验证",
+    "stream": "服务与上市",
+    "name": "维修流程、备件、诊断工具和客服培训",
+    "days": 20,
+    "deps": [
+      "dvtexit"
+    ],
+    "scope": "BASE",
+    "owner": "服务",
+    "approver": "PDT负责人",
+    "output": "服务方案/备件/培训",
+    "accept": "保修、退换、数据保护及返修防水复验可执行",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1138,
+    "wbs": "4.16.01",
+    "pred": [
+      1131
+    ]
+  },
+  {
+    "key": "docs",
+    "phase": "4 验证",
+    "stream": "服务与上市",
+    "name": "说明书、标签、健康宣称及营销资料定稿",
+    "days": 15,
+    "deps": [
+      "dvtexit",
+      "claim"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "PDT负责人",
+    "output": "用户资料/标签/宣称证据",
+    "accept": "与认证型号、实际功能、用途限制和市场语言一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1139,
+    "wbs": "4.16.02",
+    "pred": [
+      1131,
+      1005
+    ]
+  },
+  {
+    "key": "launchplan",
+    "phase": "4 验证",
+    "stream": "服务与上市",
+    "name": "渠道、定价、首销及上市供货计划",
+    "days": 15,
+    "deps": [
+      "dvtexit",
+      "finance"
+    ],
+    "scope": "BASE",
+    "owner": "市场",
+    "approver": "PDT负责人",
+    "output": "上市计划/需求预测",
+    "accept": "需求、渠道库存、SKU、区域和售后准备一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1140,
+    "wbs": "4.16.03",
+    "pred": [
+      1131,
+      1039
+    ]
+  },
+  {
+    "key": "store",
+    "phase": "4 验证",
+    "stream": "服务与上市",
+    "name": "App商店审核及正式分发准备",
+    "days": 15,
+    "deps": [
+      "dvtapp",
+      "docs"
+    ],
+    "scope": "APP",
+    "owner": "App",
+    "approver": "PDT负责人",
+    "output": "商店审核/分发就绪证据",
+    "accept": "目标区域、账号、权限、政策和配套版本可供用户获取",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1141,
+    "wbs": "4.16.04",
+    "pred": [
+      1104,
+      1139
+    ]
+  },
+  {
+    "key": "releasecandidate",
+    "phase": "4 验证",
+    "stream": "版本与放行",
+    "name": "量产候选版本回归与配置审计",
+    "days": 10,
+    "deps": [
+      "dvtexit",
+      "beta",
+      "reglast"
+    ],
+    "scope": "BASE",
+    "owner": "测试",
+    "approver": "QA",
+    "output": "RC回归/配置审计",
+    "accept": "BOM、固件、算法、App、云与认证/产测配置一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1142,
+    "wbs": "4.17.01",
+    "pred": [
+      1131,
+      1108,
+      1126
+    ]
+  },
+  {
+    "key": "pvtexit",
+    "phase": "4 验证",
+    "stream": "生产验证",
+    "name": "PVT退出与生产准备验收",
+    "days": 0,
+    "deps": [
+      "msa",
+      "yield",
+      "pvtort",
+      "supplyready"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "QA",
+    "output": "PVT退出/生产准备结论",
+    "accept": "量产工艺与测试可重复，良率产能及残余风险获批",
+    "kind": "评审",
+    "gate": "PVT退出",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1143,
+    "wbs": "4.15.07",
+    "pred": [
+      1134,
+      1135,
+      1136,
+      1137
+    ]
+  },
+  {
+    "key": "tr6",
+    "phase": "4 验证",
+    "stream": "技术评审",
+    "name": "TR6：产品包与制造验证总评审",
+    "days": 0,
+    "deps": [
+      "pvtexit",
+      "releasecandidate",
+      "service",
+      "reglast"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "技术评审组",
+    "output": "TR6报告/技术放行建议",
+    "accept": "验证、用户试用、认证、制造及服务证据完整",
+    "kind": "评审",
+    "gate": "TR6",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1144,
+    "wbs": "4.18.01",
+    "pred": [
+      1143,
+      1142,
+      1138,
+      1126
+    ]
+  },
+  {
+    "key": "adcp",
+    "phase": "4 验证",
+    "stream": "投资决策",
+    "name": "ADCP：可获得性与商业发布决策",
+    "days": 0,
+    "deps": [
+      "tr6",
+      "launchplan",
+      "docs",
+      "store"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "IPMT",
+    "output": "ADCP决议/发布授权",
+    "accept": "商业、供应、质量、法规及服务准备获授权确认",
+    "kind": "评审",
+    "gate": "ADCP",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1145,
+    "wbs": "4.19.01",
+    "pred": [
+      1144,
+      1140,
+      1139,
+      1141
+    ]
+  },
+  {
+    "key": "mpbom",
+    "phase": "5 发布",
+    "stream": "量产准备",
+    "name": "量产BOM、图纸、SOP与软硬件版本发布",
+    "days": 3,
+    "deps": [
+      "adcp"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "受控量产资料包",
+    "accept": "PLM/MES/ERP版本、替代料与烧录文件一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1146,
+    "wbs": "5.01.01",
+    "pred": [
+      1145
+    ]
+  },
+  {
+    "key": "mporder",
+    "phase": "5 发布",
+    "stream": "量产准备",
+    "name": "首批生产订单、物料与排产落实",
+    "days": 5,
+    "deps": [
+      "adcp",
+      "supplyready"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "首批订单/排产/齐套",
+    "accept": "首销区域、SKU、产能、运输和库存风险已确认",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1147,
+    "wbs": "5.01.02",
+    "pred": [
+      1145,
+      1137
+    ]
+  },
+  {
+    "key": "mp",
+    "phase": "5 发布",
+    "stream": "量产爬坡",
+    "name": "MP首批量产与过程质量巡检",
+    "days": 10,
+    "deps": [
+      "mpbom",
+      "mporder"
+    ],
+    "scope": "BASE",
+    "owner": "NPI",
+    "approver": "PDT负责人",
+    "output": "首批量产报告",
+    "accept": "关键工序、追溯、良率和异常处理稳定",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1148,
+    "wbs": "5.02.01",
+    "pred": [
+      1146,
+      1147
+    ]
+  },
+  {
+    "key": "oqc",
+    "phase": "5 发布",
+    "stream": "量产爬坡",
+    "name": "首批OQC、抽检与质量放行",
+    "days": 3,
+    "deps": [
+      "mp"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "PDT负责人",
+    "output": "OQC/批次放行记录",
+    "accept": "符合已批抽样计划，重大缺陷及不合格品已处置",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1149,
+    "wbs": "5.02.02",
+    "pred": [
+      1148
+    ]
+  },
+  {
+    "key": "logistics",
+    "phase": "5 发布",
+    "stream": "上市交付",
+    "name": "运输文件、仓储、区域合规与交付准备",
+    "days": 5,
+    "deps": [
+      "oqc",
+      "un383"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "出货/运输/仓储资料",
+    "accept": "电池运输、标签、目的市场和库存追溯满足适用要求",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1150,
+    "wbs": "5.03.01",
+    "pred": [
+      1149,
+      1111
+    ]
+  },
+  {
+    "key": "cloudprod",
+    "phase": "5 发布",
+    "stream": "上市交付",
+    "name": "云生产容量、安全运维与值守就绪",
+    "days": 5,
+    "deps": [
+      "adcp",
+      "dvtcloud"
+    ],
+    "scope": "CLOUD",
+    "owner": "云端",
+    "approver": "PDT负责人",
+    "output": "生产变更/监控/值守记录",
+    "accept": "备份恢复、告警、回滚及隐私事件响应已演练",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1151,
+    "wbs": "5.03.02",
+    "pred": [
+      1145,
+      1105
+    ]
+  },
+  {
+    "key": "channel",
+    "phase": "5 发布",
+    "stream": "上市交付",
+    "name": "渠道物料、培训与售后入口核验",
+    "days": 5,
+    "deps": [
+      "adcp",
+      "docs",
+      "service"
+    ],
+    "scope": "BASE",
+    "owner": "市场",
+    "approver": "PDT负责人",
+    "output": "渠道/客服准备记录",
+    "accept": "商品信息、支持机型、功能限制及用户入口一致",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1152,
+    "wbs": "5.03.03",
+    "pred": [
+      1145,
+      1139,
+      1138
+    ]
+  },
+  {
+    "key": "gaready",
+    "phase": "5 发布",
+    "stream": "上市交付",
+    "name": "GA发布前产品包与证据复核",
+    "days": 2,
+    "deps": [
+      "logistics",
+      "cloudprod",
+      "channel",
+      "store"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "GA检查清单",
+    "accept": "所有销售市场准入有效，版本可获取，质量放行证据可追溯",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1153,
+    "wbs": "5.03.04",
+    "pred": [
+      1150,
+      1151,
+      1152,
+      1141
+    ]
+  },
+  {
+    "key": "ga",
+    "phase": "5 发布",
+    "stream": "商业发布",
+    "name": "GA：商业可获得/正式上市",
+    "days": 0,
+    "deps": [
+      "gaready"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "IPMT",
+    "output": "GA公告/正式SKU与版本",
+    "accept": "经授权对客户正式交付并具备供货、服务和版本支持",
+    "kind": "里程碑",
+    "gate": "GA",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1154,
+    "wbs": "5.04.01",
+    "pred": [
+      1153
+    ]
+  },
+  {
+    "key": "handover",
+    "phase": "5 发布",
+    "stream": "量产交接",
+    "name": "PDT到生命周期团队移交与项目复盘",
+    "days": 5,
+    "deps": [
+      "ga"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "交接/项目复盘/未决项责任",
+    "accept": "LMT、服务、质量及供应链接受指标、资料和遗留事项",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1155,
+    "wbs": "5.05.01",
+    "pred": [
+      1154
+    ]
+  },
+  {
+    "key": "field",
+    "phase": "6 生命周期",
+    "stream": "在市监控",
+    "name": "首销质量、激活、退货与投诉监测窗口",
+    "days": 30,
+    "deps": [
+      "ga"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "PDT负责人",
+    "output": "首销质量看板/周报",
+    "accept": "按批准阈值监测批次、区域及版本异常",
+    "kind": "任务",
+    "gate": "",
+    "note": "30工作日为首轮观察窗口；监测应持续到支持期结束",
+    "consult": "相关领域代表",
+    "id": 1156,
+    "wbs": "6.01.01",
+    "pred": [
+      1154
+    ]
+  },
+  {
+    "key": "capa",
+    "phase": "6 生命周期",
+    "stream": "在市监控",
+    "name": "现场问题FRACAS、8D与纠正预防",
+    "days": 15,
+    "deps": [
+      "field"
+    ],
+    "scope": "BASE",
+    "owner": "QA",
+    "approver": "PDT负责人",
+    "output": "FRACAS/8D/闭环验证",
+    "accept": "影响范围、根因、措施及有效性可追溯",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1157,
+    "wbs": "6.01.02",
+    "pred": [
+      1156
+    ]
+  },
+  {
+    "key": "maintenance",
+    "phase": "6 生命周期",
+    "stream": "版本与支持",
+    "name": "维护版本、漏洞与OTA灰度发布窗口",
+    "days": 30,
+    "deps": [
+      "ga"
+    ],
+    "scope": "BASE",
+    "owner": "固件",
+    "approver": "PDT负责人",
+    "output": "维护/漏洞响应与灰度记录",
+    "accept": "评估回归、兼容、用户告知与回滚效果",
+    "kind": "任务",
+    "gate": "",
+    "note": "30工作日为首轮维护窗口；不代表软件支持期",
+    "consult": "相关领域代表",
+    "id": 1158,
+    "wbs": "6.02.01",
+    "pred": [
+      1154
+    ]
+  },
+  {
+    "key": "costdown",
+    "phase": "6 生命周期",
+    "stream": "成本与供应",
+    "name": "成本优化、PCN和第二来源验证",
+    "days": 25,
+    "deps": [
+      "handover"
+    ],
+    "scope": "BASE",
+    "owner": "采购",
+    "approver": "PDT负责人",
+    "output": "降本/PCN/替代料评审",
+    "accept": "变化经ECR/ECO并评估认证、算法、质量和可靠性影响",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1159,
+    "wbs": "6.03.01",
+    "pred": [
+      1155
+    ]
+  },
+  {
+    "key": "lcreview",
+    "phase": "6 生命周期",
+    "stream": "经营评审",
+    "name": "上市后经营、质量和用户价值复盘",
+    "days": 5,
+    "deps": [
+      "capa",
+      "maintenance",
+      "costdown"
+    ],
+    "scope": "BASE",
+    "owner": "产品经理",
+    "approver": "IPMT",
+    "output": "上市后评审/迭代建议",
+    "accept": "销量、毛利、退货、用户反馈和质量与商业计划比较",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1160,
+    "wbs": "6.04.01",
+    "pred": [
+      1157,
+      1158,
+      1159
+    ]
+  },
+  {
+    "key": "eolplan",
+    "phase": "6 生命周期",
+    "stream": "退出与退市",
+    "name": "EOL/EOS计划、最后采购与客户通知",
+    "days": 20,
+    "deps": [
+      "lcreview"
+    ],
+    "scope": "RETIRE",
+    "owner": "产品经理",
+    "approver": "IPMT",
+    "output": "EOL/EOS及库存/备件计划",
+    "accept": "业务触发后确定停产、支持期、合同及用户告知",
+    "kind": "任务",
+    "gate": "",
+    "note": "默认关闭；应按实际生命周期和支持承诺设置最早开始约束",
+    "consult": "相关领域代表",
+    "id": 1161,
+    "wbs": "6.05.01",
+    "pred": [
+      1160
+    ]
+  },
+  {
+    "key": "eoldata",
+    "phase": "6 生命周期",
+    "stream": "退出与退市",
+    "name": "退市数据保留/删除、云服务与安全支持处置",
+    "days": 15,
+    "deps": [
+      "eolplan"
+    ],
+    "scope": "RETIRE",
+    "owner": "安全隐私",
+    "approver": "PDT负责人",
+    "output": "退出数据与安全支持方案",
+    "accept": "符合承诺和适用要求，迁移、删除和漏洞责任明确",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1162,
+    "wbs": "6.05.02",
+    "pred": [
+      1161
+    ]
+  },
+  {
+    "key": "eoldcp",
+    "phase": "6 生命周期",
+    "stream": "退出与退市",
+    "name": "生命周期退出决策与归档",
+    "days": 0,
+    "deps": [
+      "eoldata"
+    ],
+    "scope": "RETIRE",
+    "owner": "产品经理",
+    "approver": "IPMT",
+    "output": "退出决议/最终归档",
+    "accept": "存量用户、服务、数据、库存和法律义务妥善处理",
+    "kind": "评审",
+    "gate": "EOL DCP",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1163,
+    "wbs": "6.05.03",
+    "pred": [
+      1162
+    ]
+  },
+  {
+    "key": "pmconcept",
+    "phase": "7 跨阶段管理",
+    "stream": "项目与变更",
+    "name": "概念阶段例会、风险、成本与配置管理",
+    "days": 20,
+    "deps": [
+      "charter"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "周报/风险与决策记录",
+    "accept": "风险、假设、问题与行动项有责任人与关闭证据",
+    "kind": "任务",
+    "gate": "",
+    "note": "示例管理窗口，不作为阶段退出前置；按实际周期续建",
+    "consult": "相关领域代表",
+    "id": 1164,
+    "wbs": "7.01.01",
+    "pred": [
+      1002
+    ]
+  },
+  {
+    "key": "pmplan",
+    "phase": "7 跨阶段管理",
+    "stream": "项目与变更",
+    "name": "计划阶段例会、需求与基线变更管理",
+    "days": 30,
+    "deps": [
+      "cdcp"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "计划变更/决策/基线记录",
+    "accept": "变更影响范围、成本、资源、进度和评审均有记录",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1165,
+    "wbs": "7.01.02",
+    "pred": [
+      1016
+    ]
+  },
+  {
+    "key": "pmdev",
+    "phase": "7 跨阶段管理",
+    "stream": "项目与变更",
+    "name": "开发阶段跨域例会、缺陷与配置管理",
+    "days": 90,
+    "deps": [
+      "pdcp"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "周报/缺陷/Build与ECO记录",
+    "accept": "设计、采购、制造、软件及认证变更相互同步",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1166,
+    "wbs": "7.01.03",
+    "pred": [
+      1045
+    ]
+  },
+  {
+    "key": "pmverify",
+    "phase": "7 跨阶段管理",
+    "stream": "项目与变更",
+    "name": "验证阶段风险、缺陷与认证变更管理",
+    "days": 70,
+    "deps": [
+      "tr5"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "验证问题/配置与决议",
+    "accept": "测试版本、修复范围及重测和重新认证影响可追溯",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1167,
+    "wbs": "7.01.04",
+    "pred": [
+      1090
+    ]
+  },
+  {
+    "key": "pmlaunch",
+    "phase": "7 跨阶段管理",
+    "stream": "项目与变更",
+    "name": "发布阶段日例会与上市异常响应",
+    "days": 20,
+    "deps": [
+      "adcp"
+    ],
+    "scope": "BASE",
+    "owner": "PM",
+    "approver": "PDT负责人",
+    "output": "爬坡与发布行动项",
+    "accept": "质量、供应、服务和销售异常及时升级及闭环",
+    "kind": "任务",
+    "gate": "",
+    "note": "",
+    "consult": "相关领域代表",
+    "id": 1168,
+    "wbs": "7.01.05",
+    "pred": [
+      1145
+    ]
+  }
+]

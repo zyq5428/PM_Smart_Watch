@@ -1,0 +1,35 @@
+{
+  "engine": "LibreOffice Calc 26.2",
+  "sheets": 14,
+  "tasks": 168,
+  "formula_count": 80214,
+  "scenarios": [
+    {
+      "scenario": "baseline",
+      "result": "通过",
+      "tasks_compared": 168,
+      "predicted_GA": "2028-03-28",
+      "formula_errors": 0
+    },
+    {
+      "scenario": "full",
+      "result": "通过",
+      "tasks_compared": 168,
+      "predicted_GA": "2028-08-28",
+      "formula_errors": 0
+    },
+    {
+      "scenario": "lean",
+      "result": "通过",
+      "tasks_compared": 168,
+      "predicted_GA": "2028-04-04",
+      "formula_errors": 0
+    },
+    {
+      "scenario": "invalid",
+      "result": "通过",
+      "checks": "无效前置检出、错误向后继传播、GA日期清空、看板提示"
+    }
+  ],
+  "scope": "独立逐日排期算法对照、400行公式结构、全表缓存一致性、基线保持、错误传播；未在Microsoft Excel/WPS客户端实机测试"
+}

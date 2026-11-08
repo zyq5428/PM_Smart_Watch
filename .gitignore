@@ -1,0 +1,12 @@
+.venv/
+.verification/
+sources/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+~$*
+.~lock.*
+.env
+.env.*
+!.env.example
